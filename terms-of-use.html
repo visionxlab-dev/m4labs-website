@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Terms of Use — M4 Labs LLC</title>
+  <meta name="description" content="Terms of Use for M4 Labs LLC. Read our terms and conditions governing access to and use of m4labs.co.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-deepest: #0A0D12;
+      --bg-base: #0F1218;
+      --bg-elevated: #161A22;
+      --bg-surface: #1C2028;
+      --border-subtle: #1E2330;
+      --border-default: #2A3040;
+      --text-primary: #F0F2F5;
+      --text-secondary: #B0B8C4;
+      --text-muted: #6B7280;
+      --accent-400: #00F6FF;
+      --accent-500: #00D4E0;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    *, *::before, *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-base);
+      color: var(--text-secondary);
+      line-height: 1.8;
+      font-size: 0.95rem;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    /* ── Nav Bar ── */
+    .navbar {
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      background: rgba(10, 13, 18, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .navbar-logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+    }
+
+    .navbar-logo img {
+      height: 36px;
+      width: auto;
+    }
+
+    .navbar-back {
+      font-family: var(--font-body);
+      font-size: 0.9rem;
+      font-weight: 500;
+      color: var(--accent-400);
+      text-decoration: none;
+      transition: opacity 0.2s;
+    }
+
+    .navbar-back:hover {
+      text-decoration: underline;
+      opacity: 0.85;
+    }
+
+    /* ── Content Section ── */
+    .content {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 120px 24px 80px;
+    }
+
+    /* ── Typography ── */
+    h1 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: clamp(1.8rem, 4vw, 2.5rem);
+      line-height: 1.2;
+      margin-bottom: 0.5rem;
+    }
+
+    .last-modified {
+      color: var(--text-muted);
+      font-size: 0.9rem;
+      margin-bottom: 2.5rem;
+    }
+
+    h2 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 1.3rem;
+      margin-top: 2.5rem;
+      margin-bottom: 1rem;
+      line-height: 1.3;
+    }
+
+    h3 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 1.1rem;
+      margin-top: 1.5rem;
+      margin-bottom: 0.75rem;
+      line-height: 1.3;
+    }
+
+    p {
+      margin-bottom: 1rem;
+    }
+
+    strong {
+      color: var(--text-primary);
+      font-weight: 600;
+    }
+
+    a {
+      color: var(--accent-400);
+      text-decoration: none;
+      transition: text-decoration 0.2s;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    /* ── Lists ── */
+    ul, ol {
+      margin-bottom: 1rem;
+      padding-left: 1.5rem;
+    }
+
+    ul {
+      list-style: none;
+    }
+
+    ul li {
+      position: relative;
+      padding-left: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    ul li::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0.65em;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: var(--accent-400);
+    }
+
+    ol li {
+      margin-bottom: 0.5rem;
+    }
+
+    /* ── Blockquote ── */
+    blockquote {
+      border-left: 3px solid var(--accent-400);
+      background: var(--bg-elevated);
+      padding: 1rem 1.25rem;
+      margin: 1.25rem 0;
+      border-radius: 0 6px 6px 0;
+      font-style: italic;
+    }
+
+    blockquote p {
+      margin-bottom: 0;
+    }
+
+    /* ── Horizontal Rule ── */
+    hr {
+      border: none;
+      border-top: 1px solid var(--border-subtle);
+      margin: 2.5rem 0;
+    }
+
+    /* ── Footer ── */
+    .footer {
+      background: var(--bg-deepest);
+      border-top: 1px solid var(--border-subtle);
+      padding: 60px 24px 40px;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr;
+      gap: 48px;
+    }
+
+    .footer-col h4 {
+      font-family: var(--font-heading);
+      font-weight: 700;
+      color: var(--text-primary);
+      font-size: 0.95rem;
+      margin-bottom: 1rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .footer-logo {
+      height: 32px;
+      width: auto;
+      margin-bottom: 12px;
+    }
+
+    .footer-tagline {
+      color: var(--text-muted);
+      font-size: 0.85rem;
+      line-height: 1.6;
+      max-width: 280px;
+    }
+
+    .footer-col p,
+    .footer-col a {
+      color: var(--text-secondary);
+      font-size: 0.88rem;
+      line-height: 1.8;
+      display: block;
+      margin-bottom: 0.25rem;
+    }
+
+    .footer-col a {
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-col a:hover {
+      color: var(--accent-400);
+    }
+
+    .footer-bottom {
+      max-width: 1100px;
+      margin: 40px auto 0;
+      padding-top: 24px;
+      border-top: 1px solid var(--border-subtle);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      margin: 0;
+    }
+
+    .footer-bottom-links {
+      display: flex;
+      gap: 20px;
+    }
+
+    .footer-bottom-links a {
+      color: var(--text-muted);
+      font-size: 0.8rem;
+      text-decoration: none;
+      transition: color 0.2s;
+    }
+
+    .footer-bottom-links a:hover {
+      color: var(--accent-400);
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .navbar {
+        padding: 0 16px;
+      }
+
+      .content {
+        padding: 100px 16px 60px;
+      }
+
+      .footer-inner {
+        grid-template-columns: 1fr;
+        gap: 32px;
+      }
+
+      .footer {
+        padding: 40px 16px 32px;
+      }
+
+      .footer-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Nav Bar -->
+  <nav class="navbar">
+    <a href="/" class="navbar-logo">
+      <img src="assets/m4labs-logo.png" alt="M4 Labs" />
+    </a>
+    <a href="/" class="navbar-back">Back to Home</a>
+  </nav>
+
+  <!-- Content -->
+  <main class="content">
+    <h1>Terms of Use</h1>
+    <p class="last-modified"><strong>Last Modified: January 22, 2026</strong></p>
+
+    <h2>1. Acceptance of the Terms of Use</h2>
+    <p>These terms of use are entered into by and between You and <strong>M4 Labs LLC</strong> ("Company," "we," or "us"). The following terms and conditions (collectively, "Terms of Use") govern your access to and use of <a href="https://m4labs.co">https://m4labs.co</a> (the "Website").</p>
+    <p>By using the Website, you accept and agree to be bound and abide by these Terms of Use and our <a href="/privacy-policy">Privacy Policy</a>, incorporated herein by reference. If you do not want to agree to these Terms of Use or the Privacy Policy, you must not access or use the Website.</p>
+
+    <h2>2. Eligibility</h2>
+    <p>This Website is offered and available to users who are 18 years of age or older. By using this Website, you represent and warrant that you are of legal age to form a binding contract with the Company.</p>
+
+    <h2>3. Description of Services &amp; No Guarantee of Results</h2>
+    <p>M4 Labs provides online marketing services. We collect inquiries from individuals interested in mortgage or financial information and contact them directly to discuss their needs.</p>
+    <p><strong>Important Disclaimers:</strong></p>
+    <ul>
+      <li><strong>M4 Labs is not a lender or financial institution.</strong> We do not make credit decisions, originate loans, or process loan applications.</li>
+      <li><strong>No Guarantee of Results:</strong> We do not guarantee that your use of the Website will result in any specific outcome (e.g., obtaining a loan or specific rate). All decisions are made by third-party lenders, not M4 Labs.</li>
+      <li><strong>No Lead Selling:</strong> We do not sell your personal information to third-party lenders for the purpose of them contacting you directly without your involvement. All initial communications will come from M4 Labs.</li>
+    </ul>
+
+    <h2>4. Prohibited Uses</h2>
+    <p>You agree to use the Website only for lawful purposes and in accordance with these Terms of Use. You agree not to:</p>
+    <ul>
+      <li>Submit false, misleading, or inaccurate information.</li>
+      <li>Impersonate any person or entity.</li>
+      <li>Use automated devices, bots, scripts, or other means to access or scrape the Website.</li>
+      <li>Attempt to interfere with the proper functioning of the Website.</li>
+      <li>Use the Website for any unlawful or fraudulent purpose.</li>
+    </ul>
+
+    <h2>5. TCPA Consent &amp; Telemarketing</h2>
+    <p>By submitting your telephone number on our Website forms, you expressly authorize M4 Labs to contact you regarding your inquiry via telephone calls, SMS, or MMS text messages.</p>
+    <p><strong>You specifically acknowledge and agree that:</strong></p>
+    <ul>
+      <li>Such communications may be generated using an automated telephone dialing system (autodialer) or artificial voice.</li>
+      <li>You consent to receive these communications even if your telephone number is listed on any corporate, state, or federal "Do Not Call" registry.</li>
+      <li>Your consent is not a condition of purchase.</li>
+      <li>Message frequency varies based on your inquiry and interactions.</li>
+      <li>Message and data rates may apply.</li>
+    </ul>
+    <p><strong>Opt-Out:</strong> You may revoke this consent at any time by replying <strong>STOP</strong> to any text message we send, or by contacting us at <a href="mailto:legal@m4labs.co">legal@m4labs.co</a>.</p>
+    <p><strong>Help:</strong> For assistance with our SMS program, reply <strong>HELP</strong> to any message or email <a href="mailto:legal@m4labs.co">legal@m4labs.co</a>.</p>
+
+    <h2>6. Intellectual Property Rights</h2>
+    <p>The Website and its entire contents, features, and functionality (including but not limited to all information, software, text, displays, images, video, and audio, and the design, selection, and arrangement thereof) are owned by the Company, its licensors, or other providers of such material and are protected by United States and international copyright, trademark, patent, trade secret, and other intellectual property or proprietary rights laws.</p>
+    <p>You must not reproduce, distribute, modify, create derivative works of, publicly display, publicly perform, republish, download, store, or transmit any material on our Website without prior written permission.</p>
+
+    <h2>7. Disclaimer of Warranties</h2>
+    <p><strong>YOUR USE OF THE WEBSITE IS AT YOUR OWN RISK. THE WEBSITE IS PROVIDED ON AN "AS IS" AND "AS AVAILABLE" BASIS, WITHOUT ANY WARRANTIES OF ANY KIND, EITHER EXPRESS OR IMPLIED.</strong></p>
+    <p>THE COMPANY DISCLAIMS ALL WARRANTIES, INCLUDING BUT NOT LIMITED TO IMPLIED WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE, AND NON-INFRINGEMENT. THE COMPANY DOES NOT WARRANT THAT THE WEBSITE WILL BE UNINTERRUPTED, TIMELY, SECURE, OR ERROR-FREE.</p>
+
+    <h2>8. Limitation on Liability</h2>
+    <p><strong>TO THE FULLEST EXTENT PROVIDED BY LAW, THE COMPANY SHALL NOT BE LIABLE FOR ANY DAMAGES OF ANY KIND ARISING OUT OF OR IN CONNECTION WITH YOUR USE OF, OR INABILITY TO USE, THE WEBSITE, INCLUDING BUT NOT LIMITED TO DIRECT, INDIRECT, INCIDENTAL, CONSEQUENTIAL, SPECIAL, OR PUNITIVE DAMAGES, WHETHER BASED ON WARRANTY, CONTRACT, TORT (INCLUDING NEGLIGENCE), OR ANY OTHER LEGAL THEORY.</strong></p>
+
+    <h2>9. Governing Law and Jurisdiction</h2>
+    <p>All matters relating to the Website and these Terms of Use, and any dispute or claim arising therefrom or related thereto, shall be governed by and construed in accordance with the laws of the State of Wyoming, United States, without giving effect to any choice or conflict of law provision or rule.</p>
+    <p>Any legal suit, action, or proceeding arising out of, or related to, these Terms of Use or the Website shall be instituted exclusively in the state and federal courts located in Sheridan County, Wyoming. You waive any and all objections to the exercise of jurisdiction over you by such courts and to venue in such courts.</p>
+
+    <h2>10. Contact Information</h2>
+    <p>This website is operated by:</p>
+    <p>
+      <strong>M4 Labs LLC</strong><br>
+      30 N Gould St Ste R<br>
+      Sheridan, WY 82801, United States<br>
+      Email: <a href="mailto:legal@m4labs.co">legal@m4labs.co</a>
+    </p>
+    <p>All communications relating to the Website should be directed to: <a href="mailto:legal@m4labs.co">legal@m4labs.co</a>.</p>
+
+    <hr>
+
+    <p>&copy; 2025 M4 Labs LLC. All rights reserved.</p>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <div class="footer-col">
+        <img src="assets/m4labs-logo.png" alt="M4 Labs" class="footer-logo" />
+        <p class="footer-tagline">Connecting borrowers with the right mortgage solutions through intelligent marketing.</p>
+      </div>
+      <div class="footer-col">
+        <h4>Contact</h4>
+        <a href="mailto:info@m4labs.co">info@m4labs.co</a>
+        <a href="tel:+13213279574">(321) 327-9574</a>
+        <p>30 N Gould St Ste R<br>Sheridan, WY 82801</p>
+      </div>
+      <div class="footer-col">
+        <h4>Legal</h4>
+        <a href="/terms-of-use">Terms of Use</a>
+        <a href="/privacy-policy">Privacy Policy</a>
+      </div>
+    </div>
+    <div class="footer-bottom">
+      <p>&copy; 2025 M4 Labs LLC. All rights reserved. EIN: 41-2467058</p>
+      <div class="footer-bottom-links">
+        <a href="/terms-of-use">Terms</a>
+        <a href="/privacy-policy">Privacy</a>
+      </div>
+    </div>
+  </footer>
+
+</body>
+</html>

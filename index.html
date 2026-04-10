@@ -1,0 +1,516 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>M4 Labs LLC — Performance Marketing & Lead Generation</title>
+  <meta name="description" content="M4 Labs LLC delivers performance marketing, lead generation, and conversion-optimized funnels for businesses across the United States. Based in Wyoming.">
+  <meta property="og:title" content="M4 Labs LLC — Performance Marketing & Lead Generation">
+  <meta property="og:description" content="Data-driven advertising, conversion-optimized funnels, and high-quality lead generation across the United States.">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://m4labs.co">
+  <meta property="og:image" content="assets/m4labs-logo.png">
+  <link rel="icon" type="image/png" href="assets/m4labs-logo.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+    :root {
+      --bg-deepest: #0A0D12;
+      --bg-base: #0F1218;
+      --bg-elevated: #161A22;
+      --bg-surface: #1C2028;
+      --border-subtle: #1E2330;
+      --border-default: #2A3040;
+      --text-primary: #F0F2F5;
+      --text-secondary: #B0B8C4;
+      --text-muted: #6B7280;
+      --accent-400: #00F6FF;
+      --accent-500: #00D4E0;
+      --accent-700: #008694;
+      --blue-400: #188BF6;
+      --success: #10B981;
+      --font-heading: 'Space Grotesk', sans-serif;
+      --font-body: 'Inter', sans-serif;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      font-family: var(--font-body);
+      background-color: var(--bg-deepest);
+      color: var(--text-secondary);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-family: var(--font-heading);
+      color: var(--text-primary);
+      line-height: 1.2;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; height: auto; display: block; }
+
+    /* Scroll Reveal */
+    .reveal {
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.7s ease, transform 0.7s ease;
+    }
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* Container */
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    /* Navigation */
+    .nav {
+      position: fixed;
+      top: 0; left: 0; right: 0;
+      z-index: 1000;
+      background: rgba(10, 13, 18, 0.85);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+    .nav-inner {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+      height: 64px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+    .nav-logo img { height: 36px; width: auto; }
+
+    /* Hero */
+    .hero {
+      background-color: var(--bg-base);
+      position: relative;
+      overflow: hidden;
+      padding: 160px 0 96px;
+      min-height: 80vh;
+      display: flex;
+      align-items: center;
+    }
+    .hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 0%, rgba(0,246,255,0.15) 0%, transparent 70%);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(180deg, rgba(10,13,18,0.6) 0%, rgba(15,18,24,0.95) 100%);
+      pointer-events: none;
+      z-index: 0;
+    }
+    .hero-bg {
+      position: absolute;
+      inset: 0;
+      background-image: url('assets/hero-bg.png');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: 0.3;
+    }
+    .hero .container { position: relative; z-index: 2; }
+    .hero-content { max-width: 760px; }
+    .hero h1 {
+      font-size: clamp(2rem, 5vw, 3.5rem);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 24px;
+      line-height: 1.15;
+    }
+    .hero-sub {
+      font-size: clamp(1rem, 2vw, 1.25rem);
+      color: var(--text-secondary);
+      max-width: 640px;
+      margin-bottom: 32px;
+      line-height: 1.7;
+    }
+    .hero-trust {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+    .hero-trust-dot {
+      width: 6px; height: 6px;
+      border-radius: 50%;
+      background-color: var(--accent-400);
+      flex-shrink: 0;
+    }
+
+    /* Sections */
+    .section { padding: 96px 0; }
+    .section--base { background-color: var(--bg-base); }
+    .section--elevated { background-color: var(--bg-elevated); }
+    .section-divider {
+      height: 1px;
+      background: linear-gradient(90deg, transparent, var(--border-subtle), transparent);
+    }
+    .eyebrow {
+      font-size: 0.75rem;
+      font-weight: 600;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .section-title {
+      font-size: clamp(1.5rem, 3.5vw, 2.25rem);
+      margin-bottom: 24px;
+      letter-spacing: -0.02em;
+    }
+    .section-text {
+      max-width: 640px;
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+    }
+
+    /* Services */
+    .services-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 24px;
+      margin-top: 48px;
+    }
+    @media (min-width: 768px) {
+      .services-grid { grid-template-columns: repeat(3, 1fr); }
+    }
+    .service-card {
+      background: var(--bg-surface);
+      border: 1px solid var(--border-subtle);
+      border-radius: 12px;
+      padding: 32px;
+      transition: border-color 0.3s ease, background 0.3s ease;
+    }
+    .service-card:hover {
+      border-color: var(--border-default);
+      background: linear-gradient(135deg, rgba(0,246,255,0.03) 0%, var(--bg-surface) 100%);
+    }
+    .service-icon {
+      width: 48px; height: 48px;
+      margin-bottom: 24px;
+      color: var(--accent-400);
+    }
+    .service-card h3 {
+      font-size: 1.125rem;
+      margin-bottom: 12px;
+      font-family: var(--font-heading);
+    }
+    .service-card p {
+      font-size: 0.9375rem;
+      line-height: 1.65;
+      color: var(--text-secondary);
+    }
+
+    /* Lead Gen */
+    .leadgen-content { max-width: 640px; }
+    .leadgen-list {
+      list-style: none;
+      margin-top: 32px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .leadgen-list li {
+      display: flex;
+      align-items: flex-start;
+      gap: 12px;
+      font-size: 1rem;
+      color: var(--text-secondary);
+    }
+    .check-icon {
+      flex-shrink: 0;
+      width: 20px; height: 20px;
+      color: var(--accent-400);
+      margin-top: 2px;
+    }
+
+    /* VisionXLab */
+    .vxl-section .container { max-width: 720px; }
+    .vxl-logo { height: 40px; width: auto; margin-bottom: 24px; }
+    .vxl-text {
+      font-size: 1rem;
+      line-height: 1.7;
+      color: var(--text-secondary);
+      margin-bottom: 32px;
+    }
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 14px 28px;
+      background: var(--accent-400);
+      color: var(--bg-deepest);
+      font-family: var(--font-body);
+      font-weight: 600;
+      font-size: 0.9375rem;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      transition: background 0.2s ease, transform 0.15s ease;
+      text-decoration: none;
+    }
+    .btn-primary:hover {
+      background: var(--accent-500);
+      transform: translateY(-1px);
+    }
+    .btn-primary:active { transform: translateY(0); }
+    .btn-arrow {
+      width: 16px; height: 16px;
+      transition: transform 0.2s ease;
+    }
+    .btn-primary:hover .btn-arrow { transform: translateX(3px); }
+
+    /* Footer */
+    .footer { background: var(--bg-deepest); padding: 64px 0 0; }
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      padding-bottom: 48px;
+    }
+    @media (min-width: 768px) {
+      .footer-grid { grid-template-columns: 1.5fr 1fr 1fr; }
+    }
+    .footer-logo img { height: 28px; width: auto; margin-bottom: 12px; }
+    .footer-tagline { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; }
+    .footer-heading {
+      font-family: var(--font-body);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      color: var(--text-muted);
+      margin-bottom: 16px;
+    }
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    .footer-links li { font-size: 0.875rem; color: var(--text-muted); line-height: 1.5; }
+    .footer-links a { color: var(--text-muted); transition: color 0.2s ease; }
+    .footer-links a:hover { color: var(--accent-400); }
+    .footer-contact-item { display: flex; align-items: flex-start; gap: 8px; }
+    .footer-contact-icon {
+      width: 16px; height: 16px;
+      color: var(--text-muted);
+      flex-shrink: 0;
+      margin-top: 3px;
+    }
+    .footer-bottom {
+      border-top: 1px solid var(--border-subtle);
+      padding: 24px 0;
+      text-align: center;
+    }
+    .footer-bottom p { font-size: 0.8125rem; color: var(--text-muted); }
+
+    /* Mobile */
+    @media (max-width: 767px) {
+      .hero { padding: 128px 0 72px; min-height: auto; }
+      .section { padding: 72px 0; }
+      .hero h1 { font-size: 1.75rem; }
+      .hero-sub { font-size: 1rem; }
+      .service-card { padding: 24px; }
+    }
+    @media (min-width: 1200px) {
+      .hero-content { max-width: 800px; }
+    }
+  </style>
+</head>
+<body>
+
+  <nav class="nav" role="navigation" aria-label="Main navigation">
+    <div class="nav-inner">
+      <a href="/" class="nav-logo" aria-label="M4 Labs home">
+        <img src="assets/m4labs-logo.png" alt="M4 Labs" height="36" width="auto">
+      </a>
+    </div>
+  </nav>
+
+  <section class="hero" id="hero">
+    <div class="hero-bg" aria-hidden="true"></div>
+    <div class="container">
+      <div class="hero-content reveal">
+        <h1>Performance Marketing &amp; Lead Generation</h1>
+        <p class="hero-sub">We help businesses acquire customers through data-driven advertising, conversion-optimized funnels, and high-quality lead generation across the United States.</p>
+        <div class="hero-trust">
+          <span class="hero-trust-dot" aria-hidden="true"></span>
+          <span>Based in Wyoming, USA &middot; Serving clients nationwide</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--elevated" id="services">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Our Services</p>
+        <h2 class="section-title">What We Do</h2>
+      </div>
+      <div class="services-grid">
+        <div class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="24" r="13" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2"/>
+            <circle cx="24" cy="24" r="2" fill="currentColor"/>
+            <line x1="24" y1="2" x2="24" y2="8" stroke="currentColor" stroke-width="2"/>
+            <line x1="24" y1="40" x2="24" y2="46" stroke="currentColor" stroke-width="2"/>
+            <line x1="2" y1="24" x2="8" y2="24" stroke="currentColor" stroke-width="2"/>
+            <line x1="40" y1="24" x2="46" y2="24" stroke="currentColor" stroke-width="2"/>
+          </svg>
+          <h3>Lead Generation</h3>
+          <p>High-quality, exclusive leads for mortgage lenders, financial services, and B2B companies. Real-time delivery, verified contacts.</p>
+        </div>
+        <div class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <rect x="4" y="20" width="8" height="22" rx="1" stroke="currentColor" stroke-width="2"/>
+            <rect x="16" y="12" width="8" height="30" rx="1" stroke="currentColor" stroke-width="2"/>
+            <rect x="28" y="6" width="8" height="36" rx="1" stroke="currentColor" stroke-width="2"/>
+            <path d="M38 18L44 12M44 12L44 17M44 12L39 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+          </svg>
+          <h3>Paid Advertising</h3>
+          <p>Data-driven campaigns across Meta, Google, and LinkedIn. Optimized for cost-per-lead, not vanity metrics.</p>
+        </div>
+        <div class="service-card reveal">
+          <svg class="service-icon" viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+            <path d="M6 8H42L30 24V38L18 42V24L6 8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+            <line x1="10" y1="14" x2="38" y2="14" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+            <line x1="15" y1="20" x2="33" y2="20" stroke="currentColor" stroke-width="1.5" opacity="0.4"/>
+          </svg>
+          <h3>Funnel Development</h3>
+          <p>Conversion-optimized landing pages and multi-step funnels that turn clicks into qualified prospects.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--base" id="leadgen">
+    <div class="container">
+      <div class="leadgen-content reveal">
+        <p class="eyebrow">Lead Generation</p>
+        <h2 class="section-title">Driving Growth for B2B &amp; B2C Companies</h2>
+        <p class="section-text">Our core expertise is performance-based lead generation. We build end-to-end acquisition systems — from ad creative to landing page to CRM integration — specifically engineered to deliver qualified prospects at scale.</p>
+        <ul class="leadgen-list">
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Mortgage &amp; Financial Services PPL</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Real-time lead delivery &amp; verification</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Exclusive leads — never resold</span>
+          </li>
+          <li>
+            <svg class="check-icon" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M4 10.5L8 14.5L16 6.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            <span>Full-funnel tracking &amp; attribution</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section class="section section--elevated vxl-section" id="ecosystem">
+    <div class="container">
+      <div class="reveal">
+        <p class="eyebrow">Our Ecosystem</p>
+        <h2 class="section-title">Part of VisionXLab</h2>
+        <img class="vxl-logo" src="https://images.leadconnectorhq.com/image/f_webp/q_80/r_1200/u_https://assets.cdn.filesafe.space/DNxAn1Stt9vZqvqXI0mj/media/d4cbe45b-7b46-4618-9bd6-c5a823c90bc8.svg+xml" alt="VisionXLab" height="40">
+        <p class="vxl-text">M4 Labs operates as part of the VisionXLab ecosystem — a digital marketing and technology group specializing in lead generation, performance advertising, and sales automation across the US and European markets.</p>
+        <a href="https://visionxlab.com" target="_blank" rel="noopener noreferrer" class="btn-primary">
+          Learn More at VisionXLab
+          <svg class="btn-arrow" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M3 8H13M13 8L9 4M13 8L9 12" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer class="footer" id="footer">
+    <div class="section-divider"></div>
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <div class="footer-logo">
+            <img src="assets/m4labs-logo.png" alt="M4 Labs" height="28" width="auto">
+          </div>
+          <p class="footer-tagline">Performance marketing &amp; lead generation</p>
+        </div>
+        <div>
+          <p class="footer-heading">Contact</p>
+          <ul class="footer-links">
+            <li class="footer-contact-item">
+              <svg class="footer-contact-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M2 4L8 9L14 4" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/><rect x="1" y="3" width="14" height="10" rx="1.5" stroke="currentColor" stroke-width="1.5"/></svg>
+              <a href="mailto:info@m4labs.co">info@m4labs.co</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg class="footer-contact-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M6.6 7.4C7.2 8.6 8.1 9.5 9.3 10.1L10.2 9.2C10.4 9 10.7 8.9 11 9L13 9.6C13.3 9.7 13.5 10 13.5 10.3V13C13.5 13.3 13.3 13.5 13 13.5C6.6 13.5 2.5 9.4 2.5 3C2.5 2.7 2.7 2.5 3 2.5H5.7C6 2.5 6.3 2.7 6.4 3L7 5C7.1 5.3 7 5.6 6.8 5.8L6.6 7.4Z" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              <a href="tel:+13213279574">(321) 327-9574</a>
+            </li>
+            <li class="footer-contact-item">
+              <svg class="footer-contact-icon" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><path d="M8 1.5C5 1.5 3 4 3 6.5C3 10 8 14.5 8 14.5C8 14.5 13 10 13 6.5C13 4 11 1.5 8 1.5Z" stroke="currentColor" stroke-width="1.5"/><circle cx="8" cy="6.5" r="2" stroke="currentColor" stroke-width="1.5"/></svg>
+              <span>30 N Gould St Ste R<br>Sheridan, WY 82801</span>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p class="footer-heading">Legal</p>
+          <ul class="footer-links">
+            <li><a href="/privacy-policy">Privacy Policy</a></li>
+            <li><a href="/terms-of-use">Terms of Use</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>&copy; 2025 M4 Labs LLC. All rights reserved. &middot; EIN: 41-2467058</p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function () {
+      var reveals = document.querySelectorAll('.reveal');
+      if ('IntersectionObserver' in window) {
+        var observer = new IntersectionObserver(function (entries) {
+          entries.forEach(function (entry) {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('visible');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.12, rootMargin: '0px 0px -40px 0px' });
+        reveals.forEach(function (el) { observer.observe(el); });
+      } else {
+        reveals.forEach(function (el) { el.classList.add('visible'); });
+      }
+    });
+  </script>
+</body>
+</html>
